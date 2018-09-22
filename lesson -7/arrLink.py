@@ -25,3 +25,20 @@ def addNode(arrLink, head, freelist, Node):
         arrLink[newElem].next = head
         head = newElem
     return(head, freelist)
+
+if __name__ == '__main__':
+    nodeCount = 10
+    ll = [None] * nodeCount
+    freelist = 0
+    head = -1
+    
+    # 数据初始
+    for i in range(nodeCount):
+        ll[i] = Node()
+        ll[i].next = i + 1
+    ll[nodeCount - 1].next = -1
+    freelist = 0
+    
+    # 添加节点
+    head, freelist = addNode(ll, head, freelist, Node("hello")
+    
