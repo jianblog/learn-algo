@@ -8,16 +8,16 @@ def reverse(single_link):
     """
     if not single_link.head or not single_link.head._next:
         return single_link
-    last = single_link.head
-    cur  = last._next
-    last._next = None
+    prev = single_link.head
+    cur  = prev._next
+    prev._next = None
     while cur._next:
         front = cur._next
-        cur._next = last
+        cur._next = prev 
         
-        last = cur
+        prev = cur
         cur = front
-    cur._next = last
+    cur._next = prev
     single_link.head = cur
     return single_link
 
