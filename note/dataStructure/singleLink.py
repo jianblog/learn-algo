@@ -50,6 +50,18 @@ def isPalindrome(single_link):
         p1 = p1._next
     print("Great, it's a Palindrome!")
 
+def checkLoop(single_link):
+    if not single_link.head or not single_link.head._next:
+        return
+    p1 = single_link.head
+    p2 = single_link.head
+    while p1._next and p2._next:
+        p1 = p1._next
+        p2 = p2._next._next
+        if id(p1) == id(p2):
+            print("loops!")
+            return -1
+
 if __name__ == '__main__':
     strings = "wonderednow"
     single_link = links.NodeLink()
